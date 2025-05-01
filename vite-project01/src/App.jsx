@@ -7,13 +7,21 @@ function App() {
   // let counter =0;
   let [counter, setCounter] = useState(0);
   function changeAdd() {
-    counter = counter + 1;
+    if(counter<10)
+    {
+      counter = counter + 1;
+    }
+    
     setCounter(counter);
     console.log(`clicked ${counter}`);
   }
   function changeRemove()
   {
-    counter=counter-1;
+    if(counter>0)
+    {
+      counter=counter-1;
+    }
+  
     setCounter(counter);
   }
   return (
