@@ -6,6 +6,7 @@ import './App.css'
 function App() {
   // let counter =0;
   let [counter, setCounter] = useState(0);
+
   function changeAdd() {
     if(counter<10)
     {
