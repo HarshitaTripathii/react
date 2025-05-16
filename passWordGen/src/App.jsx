@@ -21,12 +21,17 @@ function App() {
 
     }
     setPassW(pass);
-}, [len, num, charc, setPassW])
-useEffect(()=>{
-  genPassWord();
+  }, [len, num, charc, setPassW])
+// code above : useCallBack : for function optimization : it will not run the function again and again when the component is mounted or when the component is unmounted
+// code above : useState : for state management : it will store the value of the state and it will update the value of the state when the value of the state is changed
 
-},[len, num, charc, genPassWord]);
-return (
+  // code below is for auto password generation 
+// useEffect : it is used to run the code when the component is mounted or when the component is unmounted
+// useEffect : fxn genPassWord will execute when [len, num, charc, genPassWord]) are changed, in short for running the code when the component is mounted or when the component is unmounted
+  useEffect(() => {
+    genPassWord();
+  }, [len, num, charc, genPassWord]);
+  return (
     <>
       <div className='flex flex-col justify-center items-center h-screen text-xs'>
         <div className='w-80 h-24 bg-gray-400 flex flex-col justify-start border-4 ' >
@@ -40,11 +45,11 @@ return (
             <label className='bg-gray-400 pl-2'>Length :{len}</label>
           </div>
           <div className='bg-gray-400 flex'>
-            <input type="checkbox" onChange={() => {setNum((n) => !n)}} />
+            <input type="checkbox" onChange={() => { setNum((n) => !n) }} />
             <label className='bg-gray-400 text-center pl-2'>Numbers</label>
           </div>
           <div className='bg-gray-400 flex'>
-            <input type="checkbox" onChange={() => {setCharc((c) => !c)}} />
+            <input type="checkbox" onChange={() => { setCharc((c) => !c) }} />
             <label className='bg-gray-400 text-center pl-2'>Special Characters</label>
           </div>
         </div>
