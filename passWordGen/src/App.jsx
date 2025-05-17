@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -22,6 +22,14 @@ function App() {
     }
     setPassW(pass);
   }, [len, num, charc, setPassW])
+
+  const passRef=useRef(null);
+
+  const copyToClipboard=useCallback(()=>{
+    passRef.current?.select();
+    passRef.current?.setSelectionRange(0,5);   // optional
+    window.navigator.clipboard.writeText(passW);
+  }, [passW]);
 // code above : useCallBack : for function optimization : it will not run the function again and again when the component is mounted or when the component is unmounted
 // code above : useState : for state management : it will store the value of the state and it will update the value of the state when the value of the state is changed
 
@@ -36,9 +44,9 @@ function App() {
       <div className='flex flex-col justify-center items-center h-screen text-xs'>
         <div className='w-80 h-24 bg-gray-400 flex flex-col justify-start border-4 ' >
           <p className='bg-gray-400 text-center'>Password generator</p>
-          <div className='flex w-full bg-white '>
-            <input type="text" placeholder='Generate password' value={passW} readOnly className='bg-white w-full pl-2' />
-            <button className='bg-orange-500'>copy</button>
+          <div className='flex w-full bg-white border-none rounded-full'>
+            <input type="text" placeholder='Generate password' value={passW} readOnly ref={passRef} className='bg-white w-full pl-2 ' />
+            <button className='bg-orange-500 hover:bg-orange-700  ' onClick={copyToClipboard}>copy</button>
           </div>
           <div className='flex bg-gray-400 '>
             <input type="range" min={4} max={16} value={len} onChange={(e) => { setLength(e.target.value) }} />
