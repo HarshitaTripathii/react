@@ -11,8 +11,8 @@ function Header() {
                 <a className='hover:text-orange-500'>Github</a>
             </div>
             <div class="buttons" className='flex justify-around items-center gap-8'>
-                <a className='hover:text-orange-500' >LogIn</a>
-                <button className='rounded-xl bg-orange-500  h-10 w-32 shadow-xl shadow-black/30'>Get Started</button>
+                <a className='hover:text-orange-500 cursor-pointer' >LogIn</a>
+                <button className='rounded-xl bg-orange-500  h-10 w-32 shadow-xl shadow-black/30 focus:ring-2 hover:ring-orange-400 hover:bg-white hover:text-orange-500 '>Get Started</button>
             </div>
         </div>
 
