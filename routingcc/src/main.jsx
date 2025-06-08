@@ -4,7 +4,8 @@ import './index.css'
 // import App from './App.jsx'
 import Layout from './Layout.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { Home, About, Contact, User } from './components/index.js'
+import { Home, About, Contact, User, Github  }  from './components/index.js'
+import {gitInfoLoader} from './components/Github/Github.jsx'
 
 const router = createBrowserRouter(
   [
@@ -33,6 +34,11 @@ const router = createBrowserRouter(
         {
           path: "user/:userid",
           element: <User />
+        },
+        {
+          path: "github",
+          element: <Github />,
+          loader: gitInfoLoader
         }
       ]
     }
