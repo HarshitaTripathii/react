@@ -7,7 +7,7 @@ function Contact() {
     return (
         <div className='flex justify-center items-center pt-24 pb-48 min-h-screen gap-36'>
             <div className='flex justify-center items-center gap-28'>
-                <div className='flex flex-col justify-center items-start gap-3 bg-gray-200 w-80 h-64 rounded-xl shadow-xl shadow-orange-500/30 pl-6'>
+                <div className='flex flex-col justify-center items-start gap-3 bg-gray-200 w-80 h-64 rounded-xl shadow-xl shadow-orange-500/30 pl-6 '>
                     <div className='flex flex-col items-start'>
                         <h1 className="text-4xl font-bold ">Get in Touch</h1>
                         <p className='text-2xl'>Lorem ipsum dolor sit.</p>
