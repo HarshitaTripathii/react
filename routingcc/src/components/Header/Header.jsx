@@ -3,19 +3,32 @@ import {Link, NavLink} from "react-router-dom"
 
 function Header() {
     return (
-        <div className="w-screen h-24 bg-white flex justify-around items-center text-gray-700 font-bold gap-8 shadow-xl shadow-black/30 top-0 z-50 fixed text-xl">
-            <img src='/myLogo.png' className='h-14'></img>
-            <div className='flex justify-around items-center gap-8 cursor-pointer'>
-                <NavLink to='/home' className={({isActive})=>`${isActive ? "text-orange-500" :"text-gray-700"} hover:text-orange-500`}>Home</NavLink>
-                <NavLink to='/about' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500`}>About</NavLink>
-                <NavLink to='/contact' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500`}>Contact</NavLink>
-                <NavLink to='/github' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500`}>Github</NavLink>
-                <NavLink to='/user/123' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500`}>User</NavLink>
+        <div className="w-full bg-white shadow-xl shadow-black/30 top-0 z-50 fixed">
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="h-16 md:h-20 flex items-center justify-between">
+                    <img src='/myLogo.png' className='h-10 md:h-12'></img>
+                    
+                    <div className='hidden md:flex items-center space-x-8'>
+                        <NavLink to='/home' className={({isActive})=>`${isActive ? "text-orange-500" :"text-gray-700"} hover:text-orange-500 font-medium`}>Home</NavLink>
+                        <NavLink to='/about' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500 font-medium`}>About</NavLink>
+                        <NavLink to='/contact' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500 font-medium`}>Contact</NavLink>
+                        <NavLink to='/github' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500 font-medium`}>Github</NavLink>
+                        <NavLink to='/user/123' className={({isActive})=>`${isActive ? "text-orange-500" : "text-gray-700"} hover:text-orange-500 font-medium`}>User</NavLink>
+                    </div>
+
+                    <div className='hidden md:flex items-center space-x-6'>
+                        <a className='hover:text-orange-500 cursor-pointer font-medium'>LogIn</a>
+                        <button className='rounded-lg bg-orange-500 h-9 px-4 text-white shadow-md hover:bg-orange-600 transition-colors duration-200'>Get Started</button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button className="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div className='flex justify-around items-center gap-8'>
-                <a className='hover:text-orange-500 cursor-pointer'>LogIn</a>
-                <button className='rounded-xl bg-orange-500 h-10 w-32 shadow-xl shadow-black/30 focus:ring-2 hover:ring-orange-400 hover:bg-white hover:text-orange-500'>Get Started</button>
-            </div> 
         </div>
     )
 }

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+html.light {
+  background-color: white;
+}
+html.dark {
+  background-color: black;
+}
+
+
+
+
