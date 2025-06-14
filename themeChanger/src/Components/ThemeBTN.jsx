@@ -12,7 +12,7 @@ function ThemeBTN() {
       onChange={(e)=>e.currentTarget.checked ? darkMode() : lightMode()}
       className='sr-only peer'
       ></input>
-      <span className="peer h-5 w-5 rounded-full bg-white shadow-lg transition-all peer-checked:translate-x-5 peer-checked:bg-blue-600"></span>
+      <span className="peer h-5 w-5 rounded-full bg-white shadow-lg transition-all peer-checked:translate-x-5 peer-checked:bg-yellow-600"></span>
     </label>
   )
 }
