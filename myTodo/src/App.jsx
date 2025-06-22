@@ -1,14 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './index.css'
+import Todo from './components/todo'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-    <h1 className='font-bold bg-blue-700 text-yellow-500'>Harshita</h1>
+    <div className='bg-black text-white min-h-screen'>
+    <div className='flex flex-col justify-center items-center w-full  pt-10 '>
+      <h1 className='font-bold text-2xl'>Manage Your Todos</h1>
+      <div className='flex justify-center border-b-gray-900 w-1/3 gap-2.5 mt-4'>
+      <input placeholder='Enter Your Todo' className='bg-gray-900 text-white border-gray-700 border rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500'></input>
+      <button className='bg-green-600 text-white text-center w-20 rounded-xl'>Add</button>
+      </div>
+      <Todo />
+    </div>
+    </div>
+   
    
     </>
   )
