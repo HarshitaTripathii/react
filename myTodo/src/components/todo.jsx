@@ -4,13 +4,16 @@ import { FaEdit } from "react-icons/fa";
 import { IoIosRemoveCircle } from "react-icons/io";
 
 function todo() {
-  const {addTodo, updateTodo,deleteTodo, toggleComplete }=useTodo();
+  const {addTodo, updateTodo,deleteTodo, toggleComplete , completed}=useTodo();
   return (
     <div className='w-[340px] border-gray-700 border rounded-lg flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 h-[35px] p-3 mt-5'>
-        <input type='checkbox' checked={toggleComplete}></input>
+        <input type='checkbox' 
+        checked={completed===true}
+        onChange={(e)=>e.target.checked ? toggleComplete: ()=>{} 
+        }></input>
         <div className='flex justify-center items-center gap-1'>
-        <button onClick={updateTodo}><FaEdit className='text-green-500' /></button>
-        <button onClick={deleteTodo}><IoIosRemoveCircle className='text-red-500' /></button>
+        <button onClick={updateTodo}><FaEdit className='text-green-500 cursor-pointer' /></button>
+        <button onClick={deleteTodo}><IoIosRemoveCircle className='text-red-500 cursor-pointer' /></button>
         </div>
         
     </div>
